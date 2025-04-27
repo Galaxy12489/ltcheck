@@ -18,4 +18,4 @@ def index():
         selected_laptop = request.form.get('laptop')
     return render_template('index.html', laptops=laptops, selected_laptop=selected_laptop)
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080)(debug=True)
