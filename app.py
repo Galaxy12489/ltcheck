@@ -1,7 +1,14 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return "<h1>Hello!</h1>"
+
+if __name__ == "__main__":
+    from waitress import serve # type: ignore
+    serve(app, host="0.0.0.0", port=8080)
 # Список моделей ноутбуков
 laptops = [
     {"name": "ASUS VivoBook 15", "price": "45,000 - 60,000"},
